@@ -1,0 +1,26 @@
+{
+    "test":{
+        "task-one-title":"تايتل",
+        "add-one":"بيانات الملاك",
+        "add-two":"تيست اتنين",
+        "add-three":"تيست تلاتة",
+        "owner-data":"بيانات الملاك",
+        "owner-code":"كود المالك",
+        "owner-name":"اسم المالك",
+        "nationality":"الجنسية",
+        "address":"العنوان",
+        "identity-number":"رقم الهوية ",
+        "identity-date":"تاريخ الهوية",
+        "identity-source":"مصدر الهوية",
+        "phone-number":"رقم الموبايل",
+        "mobile-mobile":"رقم الجوال",
+        "fax-number":"رقم الفاكس",
+        "contact-person":"شخص الاتصال",
+        "contact-person-number":"جواله",
+        "account-number":"رقم الحساب",
+        "bank-name":"اسم البنك",
+        "cancel":"الغاء",
+        "submit":"تاكيد",
+        "save":"حفظ"
+    }
+}

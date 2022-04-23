@@ -1,0 +1,25 @@
+<nav>
+    <div class="container-fluid py-2">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <i 
+                (click)="navbarservice.openSideNav=!navbarservice.openSideNav"
+                style="cursor: pointer; color:#6680FF;font-size: 20px;"
+                class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="list-unstyled p-0 m-0 d-flex align-items-center navbar-ul">
+                <li (click)="selectLang('en')">EN</li>
+                <li class="mx-2"></li>
+                <li (click)="selectLang('ar')">AR</li>
+                <li class="mx-2"></li>
+                <li class="user-name-and-image">
+                    <span class="user-name">David Smith</span>
+                    <span class="mx-1"></span>
+                    <i class="fa-solid fa-user"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="custom-hr"></div>
+    
+</nav>

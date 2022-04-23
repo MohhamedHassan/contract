@@ -1,0 +1,50 @@
+<aside 
+[ngClass]="{
+    'left':lang=='en',
+    'right':lang=='ar',
+    'smallScreenLeft':lang=='en'&&navbarservice.openSideNav,
+    'smallScreenRight':lang=='ar'&&navbarservice.openSideNav
+}"
+
+>
+    <div class="logo-area d-flex align-items-center">
+        <img src="assets/logo.svg" alt="">
+        <div class="mx-2"></div>
+        <h1>VEX</h1>
+    </div>
+    <ul class="m-0 p-0 list-unstyled">
+        <li class="title">
+            {{'test.task-one-title' | translate}}
+        </li>
+        <li>
+            <a 
+            routerLinkActive="active"
+            (click)="navbarservice.openSideNav=false"
+            routerLink="/home/add-one">
+                <i class="fa-solid fa-newspaper"></i>
+                <span class="mx-2"></span>
+               {{'test.add-one' | translate}}
+            </a>
+        </li>
+        <li>    
+            <a 
+            (click)="navbarservice.openSideNav=false"
+            routerLinkActive="active"
+            routerLink="/home/add-two">
+                <i class="fa-solid fa-newspaper"></i>
+                <span class="mx-2"></span>
+                {{'test.add-two' | translate}}
+            </a>
+        </li>
+        <li>
+            <a 
+            (click)="navbarservice.openSideNav=false"
+            routerLinkActive="active"
+            routerLink="/home/add-three">
+                <i class="fa-solid fa-newspaper"></i>
+                <span class="mx-2"></span>
+                {{'test.add-three' | translate}}
+            </a>
+        </li>
+    </ul>
+</aside>

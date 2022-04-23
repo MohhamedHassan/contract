@@ -1,0 +1,21 @@
+.task-one {
+    .page-bg{
+        border-radius: 10px;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+    input {
+        padding: 15px;
+    }
+    .page-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .custom-breadcrumb {
+        li {
+            font-weight: 500;
+            color:rgba(0, 0, 0, .38)
+        }
+    }
+}

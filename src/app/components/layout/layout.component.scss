@@ -1,0 +1,33 @@
+.layout{
+    background-color: #F3F2F6;
+    min-height: 100vh;
+}
+.layout.left {
+    padding-left: 280px;
+    padding-right: 0;
+}
+.layout.right {
+    padding-right: 280px;
+    padding-left: 0;
+}
+@media only screen and (max-width: 1200px) {
+    .layout.left {
+        padding-left: 0px;
+        padding-right: 0;
+    }
+    .layout.right {
+        padding-left: 0px;
+        padding-right: 0;
+    }
+}
+.cover {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.5);
+}
+@media only screen and (min-width: 1201px) {
+.cover {display: none;}
+}

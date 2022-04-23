@@ -1,0 +1,15 @@
+<section class="layout" 
+[ngClass]="{
+    'left':lang=='en',
+    'right':lang=='ar'
+}"
+style="padding-top: 70px;">
+
+    <app-navbar></app-navbar> 
+    <router-outlet></router-outlet>  
+</section>
+<app-side-nav></app-side-nav>
+<div 
+(click)="navbarservice.openSideNav=false"
+*ngIf="navbarservice.openSideNav"
+class="cover"></div>

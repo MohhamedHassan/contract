@@ -1,0 +1,26 @@
+{
+    "test":{
+        "task-one-title":"Title",
+        "add-one":"Owner's data",
+        "add-two":"Add Two",
+        "add-three":"Add Three",
+        "owner-data":"Owner's data",
+        "owner-code":"Owner Code",
+        "owner-name":"Owner Name",
+        "nationality":"Nationality",
+        "address":"Address",
+        "identity-number":"Identity Number",
+        "identity-date":"Identity Date",
+        "identity-source":"Identity Source",
+        "phone-number":"Phone Number",
+        "mobile-mobile":"Mobile Number",
+        "fax-number":"Fax Number",
+        "contact-person":"Contact Person",
+        "contact-person-number":"Contact Person Number",
+        "account-number":"Account Number",
+        "bank-name":"Bank Name",
+        "cancel":"Cancel",
+        "submit":"Submit",
+        "save":"Save"
+    }
+}
