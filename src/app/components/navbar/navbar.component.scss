@@ -3,6 +3,7 @@ nav {
     position: fixed;
     top: 0;
     width: calc(100% - 280px);
+    z-index: 1111;
     .navbar-ul {
         .fa-user {
             background-color: #EEF1FF;

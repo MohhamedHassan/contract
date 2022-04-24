@@ -5,7 +5,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'/home/add-one',
+    redirectTo:'/home/ownres/add-owenrs-data',
     pathMatch:'full'
   },
   {
@@ -13,15 +13,22 @@ const routes: Routes = [
     component:LayoutComponent,
     children:[
       {
-        path:'',
-        loadChildren:() => import('src/app/screens/task-one/task-one.module').then(m => m.TaskOneModule)
+        path:'ownres',
+        loadChildren:() => import('src/app/screens/owners/owners.module').then(m => m.OwnersModule)
+      },
+      {
+        path:'customers',
+        loadChildren:() => import('src/app/screens/customers/customers.module').then(m => m.CustomersModule)
       }
     ]
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    initialNavigation: 'enabled',
+    scrollPositionRestoration: 'enabled'
+})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

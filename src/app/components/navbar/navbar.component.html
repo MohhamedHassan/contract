@@ -7,10 +7,17 @@
                 style="cursor: pointer; color:#6680FF;font-size: 20px;"
                 class="fa-solid fa-bars"></i>
             </div>
+       
             <ul class="list-unstyled p-0 m-0 d-flex align-items-center navbar-ul">
-                <li (click)="selectLang('en')">EN</li>
-                <li class="mx-2"></li>
-                <li (click)="selectLang('ar')">AR</li>
+                <li mat-button [matMenuTriggerFor]="menu">{{lang|titlecase}}</li>
+                <mat-menu #menu="matMenu">
+                <button 
+                (click)="selectLang('en')"
+                mat-menu-item>EN</button>
+                <button 
+                (click)="selectLang('ar')"
+                mat-menu-item>AR</button>
+                </mat-menu>
                 <li class="mx-2"></li>
                 <li class="user-name-and-image">
                     <span class="user-name">David Smith</span>

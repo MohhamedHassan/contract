@@ -1,26 +1,44 @@
 {
     "test":{
-        "task-one-title":"تايتل",
-        "add-one":"بيانات الملاك",
-        "add-two":"تيست اتنين",
-        "add-three":"تيست تلاتة",
-        "owner-data":"بيانات الملاك",
-        "owner-code":"كود المالك",
-        "owner-name":"اسم المالك",
+        "t":"عنوان الجدول"
+    },
+    "glopal": {
+        "actions":"تعديل",
+        "submit":"تأكيد",
+        "save":"حفظ",
+        "cancel":"الغاء",
+        "search":"بحث...",
         "nationality":"الجنسية",
         "address":"العنوان",
-        "identity-number":"رقم الهوية ",
+        "identity-number":"رقم الهوية",
         "identity-date":"تاريخ الهوية",
+        "identity-type":"نوع الهوية",
         "identity-source":"مصدر الهوية",
         "phone-number":"رقم الموبايل",
         "mobile-mobile":"رقم الجوال",
         "fax-number":"رقم الفاكس",
         "contact-person":"شخص الاتصال",
-        "contact-person-number":"جواله",
+        "contact-person-number":"جوال شخص الاتصال",
         "account-number":"رقم الحساب",
         "bank-name":"اسم البنك",
-        "cancel":"الغاء",
-        "submit":"تاكيد",
-        "save":"حفظ"
+        "tax-number":"الرقم الضريبي",
+        "add-to-black-list":"اضافة  للقائمة السوداء",
+        "phone-lang":"لغة رسائل الجوال الافتراضية"
+    },
+    "owners":{
+        "owners":"الملاك",
+        "add-owners":"اضافة ملاك",
+        "owner-data":"بيانات الملاك",
+        "owner-code":"كود المالك",
+        "owner-name":"اسم المالك"
+    },
+    "customers":{
+        "customers":"العملاء",
+        "all-customers":"جميع العملاء",
+        "add-customers":"اضافة عميل",
+        "customer-code":"كود العميل",
+        "customer-name-ar":"اسم العميل عربي",
+        "customer-name-en":"اسم العميل انجليزي",
+        "work-location-address":"العنوان / مقر العمل"
     }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit,Injectable, Output,EventEmitter } from '@angular/core
 import {
   NgbDateStruct, NgbCalendar, NgbCalendarIslamicCivil, NgbDatepickerI18n, NgbModal
 } from '@ng-bootstrap/ng-bootstrap';
+import { NavbarService } from 'src/app/services/navbar.service';
 
 const WEEKDAYS = ['ن', 'ث', 'ر', 'خ', 'ج', 'س', 'ح'];
 const MONTHS = ['محرم', 'صفر', 'ربيع الأول', 'ربيع الآخر', 'جمادى الأولى', 'جمادى الآخرة', 'رجب', 'شعبان', 'رمضان', 'شوال',
@@ -26,27 +27,24 @@ export class IslamicI18n extends NgbDatepickerI18n {
   }
 }
 
+
 @Component({
-  selector: 'app-higri-date',
-  templateUrl: './higri-date.component.html',
-  styleUrls: ['./higri-date.component.scss'],
+  selector: 'app-owners-hjri-date',
+  templateUrl: './owners-hjri-date.component.html',
+  styleUrls: ['./owners-hjri-date.component.scss'],
   providers: [
     {provide: NgbCalendar, useClass: NgbCalendarIslamicCivil},
     {provide: NgbDatepickerI18n, useClass: IslamicI18n}
   ]
 })
-export class HigriDateComponent implements OnInit {
-  model:any
-  @Output() modelChild = new EventEmitter()
-  constructor(private calendar: NgbCalendar,) { }
+export class OwnersHjriDateComponent implements OnInit {
+
+  constructor(private calendar: NgbCalendar,
+    public navservice:NavbarService) { }
   selectToday() {
-    this.model = this.calendar.getToday();
-    console.log(this.model)
+    this.navservice.model = this.calendar.getToday();
   }
   ngOnInit(): void {
   }
-  test() {
-    console.log(this.model)
-    this.modelChild.emit(this.model)
-  }
+
 }

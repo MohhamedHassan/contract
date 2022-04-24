@@ -1,0 +1,10 @@
+
+::ng-deep {
+    .custom-rtl {
+     mat-form-field {
+       text-align: right;
+       direction: rtl;
+       font-size: 20px;
+     }
+    }
+   }

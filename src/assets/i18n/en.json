@@ -1,16 +1,18 @@
 {
     "test":{
-        "task-one-title":"Title",
-        "add-one":"Owner's data",
-        "add-two":"Add Two",
-        "add-three":"Add Three",
-        "owner-data":"Owner's data",
-        "owner-code":"Owner Code",
-        "owner-name":"Owner Name",
+        "table-title":"Table Title"
+    },
+    "glopal": {
+        "actions":"Actions",
+        "submit":"Submit",
+        "save":"Save",
+        "cancel":"Cancel",
+        "search":"Search...",
         "nationality":"Nationality",
         "address":"Address",
         "identity-number":"Identity Number",
         "identity-date":"Identity Date",
+        "identity-type":"Identity Type",
         "identity-source":"Identity Source",
         "phone-number":"Phone Number",
         "mobile-mobile":"Mobile Number",
@@ -19,8 +21,24 @@
         "contact-person-number":"Contact Person Number",
         "account-number":"Account Number",
         "bank-name":"Bank Name",
-        "cancel":"Cancel",
-        "submit":"Submit",
-        "save":"Save"
+        "tax-number":"Tax Number",
+        "add-to-black-list":"Add to black list",
+        "phone-lang":"Default SMS language"
+    },
+    "owners":{
+        "owners":"Owners",
+        "add-owners":"Add Owners",
+        "owner-data":"Owner's data",
+        "owner-code":"Owner Code",
+        "owner-name":"Owner Name"
+    },
+    "customers":{
+        "customers":"Customers",
+        "all-customers":"All Customers",
+        "add-customers":"Add Customers",
+        "customer-code":"Customer Code",
+        "customer-name-ar":"Customer Name In Arabic",
+        "customer-name-en":"Customer Name In English",
+        "work-location-address":"Address / Work location"
     }
 }

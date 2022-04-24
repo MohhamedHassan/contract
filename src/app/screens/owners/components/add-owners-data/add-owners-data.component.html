@@ -1,0 +1,186 @@
+<section class="container-fluid page-form">
+    <div class="page-bg">
+ 
+     <form class="row align-items-center">
+         <h2 class="page-title">{{'owners.owner-data' | translate}}</h2>
+         <div class="col-md-6 mb-3">
+             <div class="form-group">
+                 <mat-form-field class="example-full-width w-100" appearance="fill">
+                     <mat-label>{{'owners.owner-code' | translate}}</mat-label>
+                     <input matInput placeholder="{{'owners.owner-code' | translate}}" >
+                   </mat-form-field>
+             </div>
+         </div>
+         <!-- end Owner Code -->
+         <div class="col-md-6 mb-3">
+             <div class="form-group">
+                 <mat-form-field class="example-full-width w-100" appearance="fill">
+                     <mat-label>{{'owners.owner-name' | translate}}</mat-label>
+                     <input matInput placeholder="{{'owners.owner-name' | translate}}" >
+                   </mat-form-field>
+             </div>
+         </div>
+         <!-- end Owner Name -->
+         <div class="col-md-6 mb-3">
+             <div class="form-group">
+                 <mat-form-field class="example-full-width w-100" appearance="fill">
+                     <mat-label>{{'glopal.nationality' | translate}}</mat-label>
+                     <input type="text"
+                     placeholder="{{'glopal.nationality' | translate}}" 
+                            aria-label="Number"
+                            matInput
+                            [formControl]="nationalityControl"
+                            [matAutocomplete]="auto">
+                     <mat-autocomplete #auto="matAutocomplete">
+                       <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                         {{option}}
+                       </mat-option>
+                     </mat-autocomplete>
+                   </mat-form-field>
+             </div>
+         </div>
+         <!-- end Owner Nationality -->
+         <div class="col-md-6 mb-3">
+             <div class="form-group">
+                 <mat-form-field class="example-full-width w-100" appearance="fill">
+                     <mat-label>{{'glopal.address' | translate}}</mat-label>
+                     <input matInput placeholder="{{'glopal.address' | translate}}" >
+                   </mat-form-field>
+             </div>
+         </div>
+         <!-- end Owner Address -->
+         <div class="col-md-4 mb-3">
+             <div class="form-group">
+                 <mat-form-field class="example-full-width w-100" appearance="fill">
+                     <mat-label>{{'glopal.identity-number' | translate}}</mat-label>
+                     <input matInput  placeholder="{{'glopal.identity-number' | translate}}" >
+                   </mat-form-field>
+             </div>
+         </div>
+         <!-- end Owner identity number -->
+         <div class="col-md-4 mb-3">
+             <div class="form-group">
+                 <div class="mb-2">
+                     <label for="">{{'glopal.identity-date' | translate}}  
+ 
+                         
+                     </label>
+                 </div>
+           
+                 <div *ngIf="selectDateType==2">
+                     <app-owners-hjri-date></app-owners-hjri-date>
+                 </div>
+                 
+             <ng-container *ngIf="selectDateType==1">
+                 <div 
+                 style="direction: ltr;text-align: left;"
+                 class="d-flex mb-2">
+                     <input 
+                     style="direction: ltr;text-align: left;"
+                 autocomplete="off"
+                 class="form-control" placeholder="yyyy-mm-dd"
+                 name="dp" [(ngModel)]="navservice.model" ngbDatepicker #d="ngbDatepicker">
+          <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+            <i class="fa-solid fa-calendar-days"></i>
+          </button>
+                 </div>
+             </ng-container>
+             
+                 
+                 <button class="btn btn-sm btn-outline-primary" (click)="selectDateType=2;navservice.model=''">Ar</button>
+                 <span class="mx-2"></span>
+                 <button class="btn btn-sm btn-outline-primary" (click)="selectDateType=1;navservice.model=''">En</button>
+             </div>
+         </div>
+         <!-- end Owner identity Date -->
+         <div class="col-md-4 mb-3">
+             <div class="form-group">
+                   <mat-form-field class="example-full-width w-100" appearance="fill">
+                     <mat-label>{{'glopal.identity-source' | translate}}</mat-label>
+                     <input type="text"
+                     placeholder="{{'glopal.identity-source' | translate}}" 
+                            aria-label="Number"
+                            matInput
+                            [formControl]="sourceControl"
+                            [matAutocomplete]="autoo">
+                     <mat-autocomplete #autoo="matAutocomplete">
+                       <mat-option *ngFor="let option of filteredSource | async" [value]="option">
+                         {{option}}
+                       </mat-option>
+                     </mat-autocomplete>
+                   </mat-form-field>
+             </div>
+         </div>
+         <!-- end Owner identity source -->
+         <div class="col-md-4 mb-3">
+             <div class="form-group">
+                 <mat-form-field class="example-full-width w-100" appearance="fill">
+                     <mat-label>{{'glopal.mobile-mobile' | translate}}</mat-label>
+                     <input matInput  placeholder="{{'glopal.mobile-mobile' | translate}}" >
+                   </mat-form-field>
+             </div>
+         </div>
+         <!-- end Owner Mobile number -->
+         <div class="col-md-4 mb-3">
+             <div class="form-group">
+                 <mat-form-field class="example-full-width w-100" appearance="fill">
+                     <mat-label>{{'glopal.phone-number' | translate}}</mat-label>
+                     <input matInput  placeholder="{{'glopal.phone-number' | translate}}" >
+                   </mat-form-field>
+             </div>
+         </div>
+         <!-- end Owner Phone Number -->
+         <div class="col-md-4 mb-3">
+             <div class="form-group">
+                 <mat-form-field class="example-full-width w-100" appearance="fill">
+                     <mat-label>{{'glopal.fax-number' | translate}}</mat-label>
+                     <input matInput  placeholder="{{'glopal.fax-number' | translate}}" >
+                   </mat-form-field>
+             </div>
+         </div>
+         <!-- end Owner Fax Number -->
+         <div class="col-md-6 mb-3">
+             <div class="form-group">
+                 <mat-form-field class="example-full-width w-100" appearance="fill">
+                     <mat-label>{{'glopal.contact-person' | translate}}</mat-label>
+                     <input matInput  placeholder="{{'glopal.contact-person' | translate}}" >
+                   </mat-form-field>
+             </div>
+         </div>
+         <!-- end Owner Contact Person -->
+         <div class="col-md-6 mb-3">
+             <div class="form-group">
+                 <mat-form-field class="example-full-width w-100" appearance="fill">
+                     <mat-label>{{'glopal.contact-person-number' | translate}}</mat-label>
+                     <input matInput  placeholder="{{'glopal.contact-person-number' | translate}}" >
+                   </mat-form-field> 
+             </div>
+         </div>
+         <!-- end Owner Contact Person Number  -->
+         <div class="col-md-6 mb-3">
+             <div class="form-group">
+                 <mat-form-field class="example-full-width w-100" appearance="fill">
+                     <mat-label>{{'glopal.account-number' | translate}}</mat-label>
+                     <input matInput  placeholder="{{'glopal.account-number' | translate}}" >
+                   </mat-form-field> 
+             </div>
+         </div>
+         <!-- end Owner Account Number -->
+         <div class="col-md-6 mb-3">
+             <div class="form-group">
+                 <mat-form-field class="example-full-width w-100" appearance="fill">
+                     <mat-label>{{'glopal.bank-name' | translate}}</mat-label>
+                     <input matInput  placeholder="{{'glopal.bank-name' | translate}}" >
+                   </mat-form-field> 
+             </div>
+         </div>
+         <!-- end Owner Bank Number    -->
+         <div 
+  
+         class="d-flex justify-content-end">
+             <button class="btn btn-primary">{{'glopal.submit' | translate}}</button>
+         </div>
+     </form>
+    </div>
+ </section>
+ 

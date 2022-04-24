@@ -1,3 +1,22 @@
+::ng-deep {
+    .accordion-item {
+        background-color: transparent !important;
+        border: none !important;
+    }
+    .accordion-button {
+        background-color: transparent !important;
+        color:#999AAD !important;
+    }
+    .accordion-button:not(.collapsed) {
+        color:#999AAD !important;
+        background-color: transparent !important;
+        box-shadow:none !important;
+    }
+   
+
+
+
+}
 aside {
     width: 280px;
     background-color: #1A202E;
@@ -6,7 +25,7 @@ aside {
     position: fixed;
     top: 0;
     transition: .5s;
-    z-index: 11;
+    z-index: 111111;
     %activeClass {
         color: white !important;
         background-color: #141924;
@@ -31,7 +50,7 @@ aside {
     }
     ul {
         li.title {
-            padding: 15px;
+            padding: 10px 15px;
         }
         li {
             transition: .5s;

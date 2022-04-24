@@ -27,6 +27,7 @@
     left: 0;
     right: 0;
     background-color: rgba(0,0,0,.5);
+    z-index: 11111;
 }
 @media only screen and (min-width: 1201px) {
 .cover {display: none;}

@@ -12,38 +12,52 @@
         <div class="mx-2"></div>
         <h1>VEX</h1>
     </div>
+
     <ul class="m-0 p-0 list-unstyled">
         <li class="title">
-            {{'test.task-one-title' | translate}}
+            {{'owners.owners' | translate}}
         </li>
         <li>
             <a 
             routerLinkActive="active"
             (click)="navbarservice.openSideNav=false"
-            routerLink="/home/add-one">
+            routerLink="/home/ownres/add-owenrs-data">
                 <i class="fa-solid fa-newspaper"></i>
                 <span class="mx-2"></span>
-               {{'test.add-one' | translate}}
+               {{'owners.add-owners' | translate}}
             </a>
         </li>
         <li>    
             <a 
             (click)="navbarservice.openSideNav=false"
             routerLinkActive="active"
-            routerLink="/home/add-two">
+            routerLink="/home/ownres/owenrs-data">
             <i class="fa-solid fa-clock"></i>
                 <span class="mx-2"></span>
-                {{'test.add-two' | translate}}
+                {{'owners.owner-data' | translate}}
             </a>
+        </li>
+        <li class="title mt-3">
+            {{'customers.customers' | translate}}
         </li>
         <li>
             <a 
+            routerLinkActive="active"
+            (click)="navbarservice.openSideNav=false"
+            routerLink="/home/customers/add-customers">
+                <i class="fa-solid fa-newspaper"></i>
+                <span class="mx-2"></span>
+               {{'customers.add-customers' | translate}}
+            </a>
+        </li>
+        <li>    
+            <a 
             (click)="navbarservice.openSideNav=false"
             routerLinkActive="active"
-            routerLink="/home/add-three">
-            <i class="fa-solid fa-calendar-day"></i>
+            routerLink="/home/customers/all-customers">
+            <i class="fa-solid fa-clock"></i>
                 <span class="mx-2"></span>
-                {{'test.add-three' | translate}}
+                {{'customers.all-customers' | translate}}
             </a>
         </li>
     </ul>

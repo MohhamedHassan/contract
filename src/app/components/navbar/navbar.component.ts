@@ -24,4 +24,7 @@ export class NavbarComponent implements OnInit {
    else  document.body.classList.remove("custom-rtl")
   localStorage.setItem('lang',lang)
  }
+ get  lang() {
+  return localStorage.getItem('lang') || 'en'
+}
 }
