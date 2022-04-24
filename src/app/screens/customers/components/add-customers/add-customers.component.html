@@ -107,7 +107,7 @@
                     <mat-form-field class="example-full-width w-100" appearance="fill">
                         <mat-label>{{'glopal.identity-source' | translate}}</mat-label>
                         <input type="text" placeholder="{{'glopal.identity-source' | translate}}" aria-label="Number"
-                            matInput [formControl]="nationalityControl" [matAutocomplete]="autoSource">
+                            matInput [formControl]="identitySourceControl" [matAutocomplete]="autoSource">
                         <mat-autocomplete #autoSource="matAutocomplete">
                             <mat-option *ngFor="let option of filteredIdentitySource | async" [value]="option">
                                 {{option}}
