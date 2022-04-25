@@ -8,9 +8,11 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInput, MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
+import { LangPipe } from '../pips/lang.pipe';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    LangPipe,],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -40,7 +42,8 @@ import {MatSelectModule} from '@angular/material/select';
     NgbModalModule,
     ReactiveFormsModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    LangPipe
   ]
 })
 export class SharedModule { }

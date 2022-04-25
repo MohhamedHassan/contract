@@ -2,6 +2,28 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+::ng-deep {
+  .accordion-item {
+      background-color: transparent !important;
+      border: none !important;
+  }
+  .accordion-button {
+      background-color: transparent !important;
+      color:#999AAD !important;
+  }
+  .accordion-button::after {
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      background-image: none !important;
+      content: "\f107" !important;
+  }
+  .accordion-button:not(.collapsed) {
+      color:#999AAD !important;
+      background-color: transparent !important;
+      box-shadow:none !important;
+  }
+  .accordion-body{padding: none !important;}
+}
 input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-calendar-picker-indicator {
     display: none;
@@ -12,6 +34,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background-color: #F5F5F5;
     cursor: pointer;
   }
+}
+.custom-add-new {
+  background: #EBEBEE;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
 }
 .custom-rtl {
     direction: rtl;

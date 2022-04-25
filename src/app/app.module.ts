@@ -12,15 +12,18 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenuModule} from '@angular/material/menu';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
     SideNavComponent,
     NavbarComponent,
-    LayoutComponent
+    LayoutComponent,
+    
   ],
   imports: [
     BrowserModule,
+    SharedModule,
     AppRoutingModule,
     MatMenuModule,
     NgbModule,

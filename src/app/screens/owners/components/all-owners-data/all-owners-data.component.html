@@ -1,5 +1,6 @@
 <section class="container-fluid table-date">
-    <div class="d-md-flex align-items-center table-bg">
+    <div class="d-md-flex justify-content-between align-items-center table-bg">
+      <div class="d-md-flex align-items-center mb-3 mb-md-0">
         <h1
         class="mb-3 mb-md-0"
         style="color: white;margin: 0;"
@@ -8,6 +9,12 @@
         <input type="search"
         placeholder="{{'glopal.search' | translate}}"
         class="table-search" name="" id="">
+    </div>
+    <div>
+      <a   routerLink="/home/ownres/add-owenrs-data">
+        <i class="fa-solid fa-plus custom-add-new"></i>
+      </a>
+    </div>
     </div>
     <div  class="table-responsive">
       <table class="table">

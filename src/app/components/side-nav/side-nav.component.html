@@ -12,8 +12,30 @@
         <div class="mx-2"></div>
         <h1>VEX</h1>
     </div>
-
-    <ul class="m-0 p-0 list-unstyled">
+    <ngb-accordion #acc="ngbAccordion">
+        <ngb-panel 
+        *ngFor="let item of sideBarDAte"
+        id="toggle-1" [title]="item?.parent | lang : lang">
+          <ng-template 
+          style="padding: none !important;"
+          ngbPanelContent>
+            <ul class="m-0 p-0 list-unstyled">
+                <li *ngFor="let child of item?.children">    
+                    <a 
+                    (click)="navbarservice.openSideNav=false"
+                    routerLinkActive="active"
+                    [routerLink]="child?.route">
+                    <i [class]='child?.icon'></i>
+                        <span class="mx-2"></span>
+                        {{child?.title | lang : lang}}
+                    </a>
+                </li>
+            
+                  </ul>
+          </ng-template>
+        </ngb-panel>
+      </ngb-accordion>
+    <!-- <ul class="m-0 p-0 list-unstyled">
         <li class="title">
             {{'owners.owners' | translate}}
         </li>
@@ -50,16 +72,7 @@
                {{'customers.add-customers' | translate}}
             </a>
         </li>
-        <li>    
-            <a 
-            (click)="navbarservice.openSideNav=false"
-            routerLinkActive="active"
-            routerLink="/home/customers/all-customers">
-            <i class="fa-solid fa-clock"></i>
-                <span class="mx-2"></span>
-                {{'customers.all-customers' | translate}}
-            </a>
-        </li>
+    
         <li class="title mt-3">
             {{'real-estate.real-estate' | translate}}
         </li>
@@ -83,5 +96,5 @@
                 {{'real-estate.all-main-real-estate' | translate}}
             </a>
         </li>
-    </ul>
+    </ul> -->
 </aside>

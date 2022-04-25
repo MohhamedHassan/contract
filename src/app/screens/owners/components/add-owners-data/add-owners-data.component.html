@@ -178,8 +178,20 @@
                         <!-- end Owner Bank Number    -->
                    
                         <div class="d-flex justify-content-end">
-                            <button class="btn btn-primary">{{'glopal.submit' | translate}}</button>
+                            <button 
+                            class="btn btn-light">
+                                <a 
+                                style="text-decoration:none !important;color:black !important"
+                                routerLink="/home/ownres/owenrs-data">
+                                    {{'glopal.view-all' | translate}}
+                                </a>
+                            </button>
+                            <div class="mx-2"></div>
+                            <button 
+                            class="btn btn-primary">{{'glopal.submit' | translate}}</button>
+                                
                         </div>
+                       
                     </form>
                 </div>
               
