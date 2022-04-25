@@ -1,6 +1,6 @@
 {
     "test":{
-        "table-title":"Table Title"
+        "t":"Table Title"
     },
     "glopal": {
         "actions":"Actions",
@@ -11,11 +11,13 @@
         "nationality":"Nationality",
         "address":"Address",
         "identity-number":"Identity Number",
-        "identity-date":"Identity Date",
+        "identity-en-date":"Identity EN Date",
+        "identity-ar-date":"Identity AR Date",
         "identity-type":"Identity Type",
         "identity-source":"Identity Source",
         "phone-number":"Phone Number",
         "mobile-mobile":"Mobile Number",
+        "mobile-error":"mobile number should be 10 numbers and starts with 05",
         "fax-number":"Fax Number",
         "contact-person":"Contact Person",
         "contact-person-number":"Contact Person Number",
@@ -40,5 +42,13 @@
         "customer-name-ar":"Customer Name In Arabic",
         "customer-name-en":"Customer Name In English",
         "work-location-address":"Address / Work location"
+    },
+    "real-estate":{
+        "real-estate":"Real Estate",
+        "main-real-estate-data":"Main Real ُEstate Data",
+        "all-main-real-estate":"All Main Real Estate Data",
+        "add-main-real-estate":"Add Main Real Estate Data",
+        "estate-number":"Real estate number",
+        "estate-name":"Real estate name"
     }
 }
