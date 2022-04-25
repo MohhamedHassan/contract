@@ -11,11 +11,13 @@
         "nationality":"الجنسية",
         "address":"العنوان",
         "identity-number":"رقم الهوية",
-        "identity-date":"تاريخ الهوية",
+        "identity-en-date":"تاريخ الهوية ميلادي",
+        "identity-ar-date":"تاريخ الهوية هجري",
         "identity-type":"نوع الهوية",
         "identity-source":"مصدر الهوية",
         "phone-number":"رقم الموبايل",
         "mobile-mobile":"رقم الجوال",
+        "mobile-error":"رقم الموبايل يبدأ يتكون من عشر ارقام ويبدا ب 05",
         "fax-number":"رقم الفاكس",
         "contact-person":"شخص الاتصال",
         "contact-person-number":"جوال شخص الاتصال",
@@ -40,5 +42,13 @@
         "customer-name-ar":"اسم العميل عربي",
         "customer-name-en":"اسم العميل انجليزي",
         "work-location-address":"العنوان / مقر العمل"
+    },
+    "real-estate":{
+        "real-estate":"العقارات",
+        "main-real-estate-data":"بيانات العقارات الرئيسية",
+        "all-main-real-estate":"بيانات العقارات الرئيسية",
+        "add-main-real-estate":"اضافة بيانات العقارات الرئيسية",
+        "estate-number":"رقم العقار",
+        "estate-name":"اسم العقار"
     }
 }

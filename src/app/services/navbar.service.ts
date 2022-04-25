@@ -5,7 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class NavbarService {
   openSideNav:boolean=false
-  model
-  customersDate
+  ownerEnDate
+  ownerArDate
+  customersEnDate
+  customersArDate
   constructor() { }
 }

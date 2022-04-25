@@ -1,14 +1,15 @@
 <section class="container-fluid page-form">
     <div class="page-bg">
 
-        <form class="row align-items-center">
+        <form [formGroup]="customersForm" class="row">
             <h2 class="page-title">{{'customers.customers' | translate}}</h2>
             <div class="col-md-6 mb-3">
                 <div class="form-group">
                     <mat-form-field class="example-full-width w-100" appearance="fill">
                         <mat-label>{{'customers.customer-code' | translate}}</mat-label>
-                        <input matInput placeholder="{{'customers.customer-code' | translate}}">
+                        <input type="number" matInput placeholder="{{'customers.customer-code' | translate}}">
                     </mat-form-field>
+
                 </div>
             </div>
             <!-- end Customer Code -->
@@ -39,19 +40,38 @@
                 </div>
             </div>
             <!-- end customer-name-en -->
-            <div class="col-md-6 mb-3">
-                <div class="form-group">
-                    <mat-form-field class="example-full-width w-100" appearance="fill">
-                        <mat-label>{{'glopal.nationality' | translate}}</mat-label>
-                        <input type="text" placeholder="{{'glopal.nationality' | translate}}" aria-label="Number"
-                            matInput [formControl]="nationalityControl" [matAutocomplete]="auto">
-                        <mat-autocomplete #auto="matAutocomplete">
-                            <mat-option *ngFor="let option of filteredNationalities | async" [value]="option">
-                                {{option}}
-                            </mat-option>
-                        </mat-autocomplete>
-                    </mat-form-field>
+            <div 
+                  
+            class="col-md-6 mb-3">
+                <div
+                style="position: relative;" 
+                class="form-group">
+                    <label for="">Nationality</label>
+                    <div 
+                    style="border:1px solid gray;padding:10px"
+                    (click)="showNationalitesList()"
+                    class="d-flex justify-content-between">
+                        <span>{{selectedNationality || 'Select Nationality'}}</span>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </div>
+                   <div 
+                   *ngIf="shownationalitiesList"
+                   style="    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);height: 155px;overflow: auto;position: absolute;width: 100%;background-color: white;z-index: 111;"
+                   class="list">
+                   <input
+                   #nationalityInput
+                   (blur)="hideNationalitesList()"
+                   (keyup)="searchForNationality(nationalityInput)"
+                   placeholder="Search"
+                   type="text">
+                 
+                    <p
+                    (click)="selectNAtionality(item)"
+                    class="p-3 m-0 cutsom-list-item"
+                    *ngFor="let item of nationalities">{{item}}</p>
                 </div>
+                </div>
+              
             </div>
             <!-- end Customer Nationality -->
             <div class="col-md-6 mb-3">
@@ -63,7 +83,7 @@
                 </div>
             </div>
             <!-- end work-location-address-->
-            <div class="col-md-6 mb-3">
+            <div class="col-md-12 mb-3">
                 <div class="form-group">
                     <mat-form-field class="example-full-width w-100" appearance="fill">
                         <mat-label>{{'glopal.identity-number' | translate}}</mat-label>
@@ -74,34 +94,18 @@
             <!-- end Customer identity number -->
             <div class="col-md-6 mb-3">
                 <div class="form-group">
-                    <div class="mb-2">
-                        <label for="">{{'glopal.identity-date' | translate}}</label>
-                    </div>
-
-                    <div *ngIf="selectDateType==2">
-                        <app-customers-hjri-date></app-customers-hjri-date>
-                    </div>
-
-                    <ng-container *ngIf="selectDateType==1">
-                        <div style="direction: ltr;text-align: left;" class="d-flex mb-2">
-                            <input style="direction: ltr;text-align: left;" autocomplete="off" class="form-control"
-                                placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="navservice.customersDate" ngbDatepicker
-                                #d="ngbDatepicker">
-                            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
-                                <i class="fa-solid fa-calendar-days"></i>
-                            </button>
-                        </div>
-                    </ng-container>
-
-
-                    <button class="btn btn-sm btn-outline-primary"
-                        (click)="selectDateType=2;navservice.customersDate=''">Ar</button>
-                    <span class="mx-2"></span>
-                    <button class="btn btn-sm btn-outline-primary"
-                        (click)="selectDateType=1;navservice.customersDate=''">En</button>
+                    <label for="">{{'glopal.identity-en-date' | translate}}</label>
+                    <app-customers-en-date></app-customers-en-date>
                 </div>
             </div>
-            <!-- end Customer identity Date -->
+            <!-- end Customer identity en Date -->
+            <div class="col-md-6 mb-3">
+                <div class="form-group ">
+                    <label for="">{{'glopal.identity-ar-date' | translate}}</label>
+                    <app-customers-hjri-date></app-customers-hjri-date>
+                </div>
+            </div>
+            <!-- end Customer identity ar Date -->
             <div class="col-md-6 mb-3">
                 <div class="form-group">
                     <mat-form-field class="example-full-width w-100" appearance="fill">
@@ -121,7 +125,7 @@
                 <div class="form-group">
                     <mat-form-field appearance="fill" class="w-100">
                         <mat-label>{{'glopal.identity-type' | translate}}</mat-label>
-                        <mat-select [(ngModel)]="selectedIdentityTypeValue" name="identityTypeInputName">
+                        <mat-select  name="identityTypeInputName">
                             <mat-option *ngFor="let food of identityType" [value]="food.value">
                                 {{food.viewValue}}
                             </mat-option>
@@ -134,8 +138,13 @@
                 <div class="form-group">
                     <mat-form-field class="example-full-width w-100" appearance="fill">
                         <mat-label>{{'glopal.mobile-mobile' | translate}}</mat-label>
-                        <input matInput placeholder="{{'glopal.mobile-mobile' | translate}}">
+                        <input formControlName="mobileNumber" matInput
+                            placeholder="{{'glopal.mobile-mobile' | translate}}">
                     </mat-form-field>
+                    <p *ngIf="customersForm.controls.mobileNumber?.errors!=null && 
+                    customersForm.controls.mobileNumber.touched" class="text-danger my-1">
+                        {{'glopal.mobile-error' | translate}}
+                    </p>
                 </div>
             </div>
             <!-- end Customer Mobile number -->
@@ -179,7 +188,7 @@
                 <div class="form-group">
                     <mat-form-field appearance="fill" class="w-100">
                         <mat-label>{{'glopal.add-to-black-list' | translate}}</mat-label>
-                        <mat-select [(ngModel)]="selectedIdentityTypeValue" name="identityTypeInputName">
+                        <mat-select  name="identityTypeInputName">
                             <mat-option *ngFor="let food of identityType" [value]="food.value">
                                 {{food.viewValue}}
                             </mat-option>
@@ -192,7 +201,7 @@
                 <div class="form-group">
                     <mat-form-field appearance="fill" class="w-100">
                         <mat-label>{{'glopal.phone-lang' | translate}}</mat-label>
-                        <mat-select [(ngModel)]="selectedIdentityTypeValue" name="identityTypeInputName">
+                        <mat-select  name="identityTypeInputName">
                             <mat-option *ngFor="let food of identityType" [value]="food.value">
                                 {{food.viewValue}}
                             </mat-option>

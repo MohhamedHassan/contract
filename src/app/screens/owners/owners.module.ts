@@ -6,13 +6,15 @@ import { AllOwnersDataComponent } from './components/all-owners-data/all-owners-
 import { AddOwnersDataComponent } from './components/add-owners-data/add-owners-data.component';
 import { OwnersHjriDateComponent } from './components/owners-hjri-date/owners-hjri-date.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { OwnersEnDateComponent } from './components/owners-en-date/owners-en-date.component';
 
 
 @NgModule({
   declarations: [
     AllOwnersDataComponent,
     AddOwnersDataComponent,
-    OwnersHjriDateComponent
+    OwnersHjriDateComponent,
+    OwnersEnDateComponent
   ],
   imports: [
     CommonModule,

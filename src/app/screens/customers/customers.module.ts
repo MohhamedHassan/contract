@@ -7,13 +7,15 @@ import { AddCustomersComponent } from './components/add-customers/add-customers.
 import { CustomersHjriDateComponent } from './components/customers-hjri-date/customers-hjri-date.component';
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { CustomersEnDateComponent } from './components/customers-en-date/customers-en-date.component';
 
 
 @NgModule({
   declarations: [
     AllCustomersComponent,
     AddCustomersComponent,
-    CustomersHjriDateComponent
+    CustomersHjriDateComponent,
+    CustomersEnDateComponent
   ],
   imports: [
     CommonModule,

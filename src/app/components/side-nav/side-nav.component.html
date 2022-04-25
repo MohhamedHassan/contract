@@ -60,5 +60,28 @@
                 {{'customers.all-customers' | translate}}
             </a>
         </li>
+        <li class="title mt-3">
+            {{'real-estate.real-estate' | translate}}
+        </li>
+        <li>
+            <a 
+            routerLinkActive="active"
+            (click)="navbarservice.openSideNav=false"
+            routerLink="/home/real-estate/add-main-real-estate">
+                <i class="fa-solid fa-newspaper"></i>
+                <span class="mx-2"></span>
+               {{'real-estate.add-main-real-estate' | translate}}
+            </a>
+        </li>
+        <li>    
+            <a 
+            (click)="navbarservice.openSideNav=false"
+            routerLinkActive="active"
+            routerLink="/home/real-estate/all-main-real-estate">
+            <i class="fa-solid fa-clock"></i>
+                <span class="mx-2"></span>
+                {{'real-estate.all-main-real-estate' | translate}}
+            </a>
+        </li>
     </ul>
 </aside>

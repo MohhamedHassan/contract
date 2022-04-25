@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { map, Observable, startWith } from 'rxjs';
 import { NavbarService } from 'src/app/services/navbar.service';
 
@@ -9,23 +9,30 @@ import { NavbarService } from 'src/app/services/navbar.service';
   styleUrls: ['./add-customers.component.scss']
 })
 export class AddCustomersComponent implements OnInit {
+  @ViewChild('nationalityInput')nationalityInput:ElementRef
   selectDateType=1
-  nationalities: string[] = ['One', 'Two', 'Three'];
   nationalityControl = new FormControl();
   filteredNationalities: Observable<string[]>;
   identitySource: string[] = ['One', 'Two', 'Three'];
   identitySourceControl = new FormControl();
   filteredIdentitySource: Observable<string[]>;
   selectedIdentityTypeValue: string;
-
+  nationalitiesMain: string[] = ['source one', 'source Two', 'source Three'];
+  nationalities: string[] = ['source one', 'source Two', 'source Three'];
+  shownationalitiesList=false
+  selectedNationality
+  customersForm
   identityType= [
     {value: 'steak-0', viewValue: 'Steak'},
     {value: 'pizza-1', viewValue: 'Pizza'},
     {value: 'tacos-2', viewValue: 'Tacos'},
   ];
-  constructor(public navservice:NavbarService) { }
+  constructor(public navservice:NavbarService,
+    private cd:ChangeDetectorRef,
+    private fb:FormBuilder) { }
 
   ngOnInit(): void {
+    this.returnCustomesForm()
     this.filteredNationalities = this.nationalityControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filterNationality(value)),
@@ -44,5 +51,37 @@ export class AddCustomersComponent implements OnInit {
     const filterValue = value.toLowerCase();
 
     return this.identitySource.filter(option => option.toLowerCase().includes(filterValue));
+  }
+  returnCustomesForm() {
+    this.customersForm = this.fb.group({
+      mobileNumber:['',[Validators.pattern(/^05\d{8}$/)]]
+    })
+  }
+  submitCustomesForm(value) {
+    console.log(value)
+  }
+  searchForNationality(nationalityInput) {
+    this.nationalities = this.nationalitiesMain.filter(i => i.toLowerCase().includes(nationalityInput.value.toLowerCase()))
+    if(nationalityInput.value.length==0) this.nationalities=[...this.nationalitiesMain]
+  }
+  showNationalitesList() {
+    this.nationalities=[...this.nationalitiesMain]
+    if(this.shownationalitiesList) this.shownationalitiesList=false
+    else {
+      this.shownationalitiesList=true
+      this.cd.detectChanges()
+      this.nationalityInput.nativeElement.focus()
+    }
+    
+  }
+  selectNAtionality(item) {
+    this.shownationalitiesList=true
+    this.selectedNationality=item
+    this.shownationalitiesList=false
+  }
+  hideNationalitesList() {
+    setTimeout(() => {
+      this.shownationalitiesList=false
+    },200)
   }
 }

@@ -2,6 +2,17 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+.cutsom-list-item {
+  &:hover {
+    background-color: #F5F5F5;
+    cursor: pointer;
+  }
+}
 .custom-rtl {
     direction: rtl;
     text-align: right;

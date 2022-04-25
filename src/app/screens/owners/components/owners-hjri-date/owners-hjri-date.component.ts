@@ -42,7 +42,7 @@ export class OwnersHjriDateComponent implements OnInit {
   constructor(private calendar: NgbCalendar,
     public navservice:NavbarService) { }
   selectToday() {
-    this.navservice.model = this.calendar.getToday();
+    this.navservice.ownerArDate = this.calendar.getToday();
   }
   ngOnInit(): void {
   }
