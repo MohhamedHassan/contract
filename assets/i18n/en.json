@@ -4,6 +4,8 @@
     },
     "glopal": {
         "actions":"Actions",
+        "logout":"Logout",
+        "view-all":"View All",
         "submit":"Submit",
         "save":"Save",
         "cancel":"Cancel",

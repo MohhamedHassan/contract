@@ -4,6 +4,8 @@
     },
     "glopal": {
         "actions":"تعديل",
+        "view-all":"عرض الكل",
+        "logout":"تسجيل الخروج",
         "submit":"تأكيد",
         "save":"حفظ",
         "cancel":"الغاء",
