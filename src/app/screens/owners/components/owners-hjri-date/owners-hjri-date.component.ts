@@ -1,9 +1,10 @@
 import { Component, OnInit,Injectable, Output,EventEmitter } from '@angular/core';
 import {
-  NgbDateStruct, NgbCalendar, NgbCalendarIslamicCivil, NgbDatepickerI18n, NgbModal
+  NgbDateStruct, NgbCalendar, NgbCalendarIslamicCivil, NgbDatepickerI18n, NgbModal, NgbDate
 } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarService } from 'src/app/services/navbar.service';
-
+import HijriDate,{toHijri} from 'hijri-date/lib/safe';
+import { DatePipe } from '@angular/common';
 const WEEKDAYS = ['ن', 'ث', 'ر', 'خ', 'ج', 'س', 'ح'];
 const MONTHS = ['محرم', 'صفر', 'ربيع الأول', 'ربيع الآخر', 'جمادى الأولى', 'جمادى الآخرة', 'رجب', 'شعبان', 'رمضان', 'شوال',
   'ذو القعدة', 'ذو الحجة'];
@@ -39,12 +40,22 @@ export class IslamicI18n extends NgbDatepickerI18n {
 })
 export class OwnersHjriDateComponent implements OnInit {
 
-  constructor(private calendar: NgbCalendar,
-    public navservice:NavbarService) { }
-  selectToday() {
-    this.navservice.ownerArDate = this.calendar.getToday();
-  }
+  constructor(    private datePipe: DatePipe,
+    public navservice:NavbarService) {
+     
+     }
   ngOnInit(): void {
   }
+  onDateSelect(event){
+    console.log(event)
+    const day = new HijriDate(event.year, event.month, event.day);
+    const formated = this.datePipe.transform(day, 'yyy-MM-dd')  ;
+    const enArray = formated.split("-")
+    this.navservice.ownerEnDate =   new NgbDate(Number(enArray[0]),Number(enArray[1]),Number(enArray[2]))
+    
+  
+    console.log(this.navservice.ownerEnDate )
+    this.navservice.ownerArDate =  new NgbDate(event.year,event.month,event.day)  ;
 
+  }
 }

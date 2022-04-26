@@ -31,12 +31,23 @@
                             <div
                             style="position: relative;" 
                             class="form-group">
-                                <label for="">Nationality</label>
                                 <div 
-                                style="border:1px solid gray;padding:10px"
+                                style="padding:10px;background-color:#F5F5F5;height: 52px;border-radius: 4px 4px 0 0;"
                                 (click)="showNationalitesList()"
-                                class="d-flex justify-content-between">
-                                    <span>{{selectedNationality || 'Select Nationality'}}</span>
+                                class="d-flex justify-content-between align-items-center customSelectBox">
+                                    <div>
+                                        <span 
+                                        style="transition: .5s;display: block;"
+                                        [ngStyle]="{
+                                            fontSize:placeholderAnimation?'12px':'15px',
+                                            color:placeholderAnimation?'#8994CF':'#979191',
+                                            marginBottom:placeholderAnimation?'2px':'0'
+                                        }"
+                                       
+
+                                        >Selected Nationality</span>
+                                        <span>{{selectedNationality}}</span>
+                                    </div>
                                     <i class="fa-solid fa-caret-down"></i>
                                 </div>
                                <div 
@@ -44,12 +55,18 @@
                                style="    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);height: 155px;overflow: auto;position: absolute;width: 100%;background-color: white;z-index: 111;"
                                class="list">
                                <input
+                               style="outline:none;border:none;padding:10px"
                                #nationalityInput
                                (blur)="hideNationalitesList()"
                                (keyup)="searchForNationality(nationalityInput)"
-                               placeholder="Search"
+                               placeholder="{{'glopal.search' | translate}}"
                                type="text">
-                             
+                                <p
+                                class="p-3 m-0 cutsom-list-item"
+                                (click)="selectNAtionality('')"
+                                >
+                                Select Nationality
+                                </p>
                                 <p
                                 (click)="selectNAtionality(item)"
                                 class="p-3 m-0 cutsom-list-item"

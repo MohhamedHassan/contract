@@ -1,13 +1,30 @@
 <div 
 style="direction: ltr;text-align: left;"
-class="d-flex mb-2">
+class="d-flex mb-2  align-items-center">
+<div style="position: relative;width: 100%;">
     <input 
+    (dateSelect)="onDateSelect($event)"
     style="width: 100%;"
-    type="date"
+    [(ngModel)]="navservice.ownerEnDate"
 autocomplete="off"
 class="form-control" placeholder="yyyy-mm-dd"
-name="dp" [(ngModel)]="navservice.ownerEnDate" ngbDatepicker #d="ngbDatepicker">
-<button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
+name="dp" ngbDatepicker #d="ngbDatepicker">
+<div 
+style="position: absolute;top: 0;bottom:0;left: 0;right:0;width: 100%;height: 100%;background-color:#F5F5F5;display: flex;align-items: center;padding: 0 15px;"
+>
+    <span *ngIf="navservice.ownerEnDate">
+        {{navservice.ownerEnDate?.year+'/'+navservice.ownerEnDate?.month+'/'+navservice.ownerEnDate?.day}}
+    </span>
+</div>
+</div>
+<button
+style="box-shadow: none;"
+class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button">
 <i class="fa-solid fa-calendar-days"></i>
 </button>
+<span class="d-bloc mx-2"></span>
+<i 
+(click)="navservice.clearDate()"
+style="cursor: pointer;"
+class="fa-solid fa-trash text-primary"></i>
 </div>

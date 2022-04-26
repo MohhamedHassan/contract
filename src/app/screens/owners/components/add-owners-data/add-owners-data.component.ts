@@ -23,7 +23,7 @@ export class AddOwnersDataComponent implements OnInit {
   selectedNationality
   sourceControl = new FormControl();
   filteredSource: Observable<string[]>;
-
+ placeholderAnimation=false
   constructor(private modalService: NgbModal,
     private cd:ChangeDetectorRef,
     public navservice:NavbarService,
@@ -74,6 +74,8 @@ export class AddOwnersDataComponent implements OnInit {
     if(nationalityInput.value.length==0) this.nationalities=[...this.nationalitiesMain]
   }
   showNationalitesList() {
+    this.placeholderAnimation=true
+
     this.nationalities=[...this.nationalitiesMain]
     if(this.shownationalitiesList) this.shownationalitiesList=false
     else {
@@ -87,8 +89,12 @@ export class AddOwnersDataComponent implements OnInit {
     this.shownationalitiesList=true
     this.selectedNationality=item
     this.shownationalitiesList=false
+    this.placeholderAnimation=this.selectedNationality?true:false
+
   }
   hideNationalitesList() {
+    this.placeholderAnimation=this.selectedNationality?true:false
+    console.log(this.selectedNationality,this.placeholderAnimation)
     setTimeout(() => {
       this.shownationalitiesList=false
     },200)

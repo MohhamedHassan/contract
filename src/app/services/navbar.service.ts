@@ -10,4 +10,8 @@ export class NavbarService {
   customersEnDate
   customersArDate
   constructor() { }
+  clearDate() {
+    this.ownerEnDate=null
+    this.ownerArDate=null
+  }
 }
