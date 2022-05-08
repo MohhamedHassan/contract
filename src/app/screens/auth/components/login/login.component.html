@@ -1,0 +1,61 @@
+<section class="login d-flex justify-content-center align-items-center">
+    <form 
+    (ngSubmit)="login(loginForm.value)"
+    [formGroup]="loginForm"
+    >
+        <div class="form-header">
+            <img src="assets/images/logo.svg" alt="main-logo">
+            <h2>Welcome Back</h2>
+        </div>
+        <div class="form-group">
+            <mat-form-field class="example-full-width w-100" appearance="fill">
+                <mat-label>{{'glopal.contact-person-number' | translate}}</mat-label>
+                <input 
+                formControlName="email"
+                matInput placeholder="{{'glopal.contact-person-number' | translate}}">
+            </mat-form-field>
+            <p 
+            *ngIf="(loginForm.controls.email?.errors!== null && loginForm.controls.email.touched) || 
+            (loginForm.controls.email?.errors!== null && submited)"
+            class="text-danger">
+                Email is required
+            </p>
+        </div>
+        <div class="form-group">
+            <mat-form-field appearance="fill" class="w-100">
+                <mat-label>Enter your password</mat-label>
+                <input 
+                formControlName="password"
+                matInput [type]="hide ? 'password' : 'text'">
+                <button 
+                type="button"
+                style="border: none;"
+                mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+              <p 
+              *ngIf="(loginForm.controls.password?.errors!== null && loginForm.controls.password.touched) || 
+              (loginForm.controls.password?.errors!== null && submited)"
+              class="text-danger">
+                Password is required
+            </p>
+        </div>
+        <div class="mb-3">
+            <a href="">Forgot Password?</a>
+        </div>
+        <button 
+        [disabled]="loginLoading"
+        class="btn btn-primary w-100">
+            SIGN IN
+            <i 
+            *ngIf="loginLoading"
+            class="fas fa-circle-notch fa-spin"></i>
+        </button>
+        <p 
+        *ngIf="loginError"
+        class="my-2 text-danger">
+            {{loginError}}
+        </p>
+    </form>
+</section>

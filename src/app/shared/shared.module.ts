@@ -9,7 +9,7 @@ import { MatInput, MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
 import { LangPipe } from '../pips/lang.pipe';
-
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     LangPipe,],
@@ -24,6 +24,7 @@ import { LangPipe } from '../pips/lang.pipe';
     ReactiveFormsModule,
     FormsModule,
     MatSelectModule,
+    MatIconModule,
     TranslateModule.forChild({
       defaultLanguage:'en',
       loader: {
@@ -43,7 +44,8 @@ import { LangPipe } from '../pips/lang.pipe';
     ReactiveFormsModule,
     FormsModule,
     MatSelectModule,
-    LangPipe
+    LangPipe,
+    MatIconModule
   ]
 })
 export class SharedModule { }

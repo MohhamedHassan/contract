@@ -5,8 +5,12 @@ import { LayoutComponent } from './components/layout/layout.component';
 const routes: Routes = [
   {
     path:'',
-    redirectTo:'/home/ownres/add-owenrs-data',
+    redirectTo:'/auth/login',
     pathMatch:'full'
+  },
+  {
+    path:'auth',
+    loadChildren:() => import('src/app/screens/auth/auth.module').then(m => m.AuthModule)
   },
   {
     path:'home',

@@ -52,5 +52,9 @@
         "add-main-real-estate":"Add Main Real Estate Data",
         "estate-number":"Real estate number",
         "estate-name":"Real estate name"
+    },
+    "auth":{
+        "email":"E-mail",
+        "password":"Password"
     }
 }
